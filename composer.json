@@ -1,0 +1,12 @@
+{
+	"name": "s-dl/symfony/menu",
+	"description": "",
+	"autoload": {
+		"psr-4": {
+			"Symfony\\Menu\\": "Lib/"
+		}
+	},
+	"require": {
+		"php": ">=5.5.9"
+	}
+}
