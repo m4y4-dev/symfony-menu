@@ -8,6 +8,17 @@ Add to app/service.yml
         	arguments: ["@request_stack", "@security.access_map", "@router", "@security.authorization_checker", "AppBundle/Menu"]
 
 
+Make the menus available in twig by adding service to twig globals in app/config.yml
+
+Example:
+
+    twig:
+        debug: '%kernel.debug%'
+        strict_variables: '%kernel.debug%'
+        globals:
+            menus: "@menu_collection"
+
+
 Add your menus to src/{BundleName}/Menu/
 
 Example:
