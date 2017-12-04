@@ -3,9 +3,9 @@ Simple way to use access-restricted menu in a symfony application
 
 Add to app/service.yml
 
-menu_collection:
-        class: Symfony\Menu\MenuCollection
-        arguments: ["@request_stack", "@security.access_map", "@router", "@security.authorization_checker", "AppBundle/Menu"]
+	menu_collection:
+        	class: Symfony\Menu\MenuCollection
+        	arguments: ["@request_stack", "@security.access_map", "@router", "@security.authorization_checker", "AppBundle/Menu"]
 
 
 Add your menus to src/{BundleName}/Menu/
