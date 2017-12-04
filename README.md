@@ -54,9 +54,9 @@ Use in twig template as follows:
 	{% from 'macro/sidebarMenu.html.twig' import sidebarMenu %}
 	
 	<ul id="Menu">
-    	    {% for item in menus.MainMenu %}
-                {{ sidebarMenu(item, loop) }}
-    	    {% endfor %}
+		{% for item in menus.MainMenu %}
+			{{ sidebarMenu(item, loop) }}
+		{% endfor %}
 	</ul>
 
 
