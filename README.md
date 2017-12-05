@@ -6,7 +6,7 @@ Simple way to use access-restricted menu in a symfony application
 
 ### Add to composer.json
 
-```
+```yml
 "repositories": [
     {
         "type": "vcs",
@@ -26,7 +26,7 @@ composer require m4y4-dev/symfony-menu:^1.0
 ### Add to app/service.yml
 (only required if autoconfigure = false)
 
-```
+```yml
 menu_collection:
     class: Symfony\Menu\MenuCollection
     arguments: ["@request_stack", "@security.access_map", "@router", "@security.authorization_checker", "AppBundle/Menu"]
@@ -35,7 +35,7 @@ menu_collection:
 ### Make the menus available in twig by adding service to twig globals in app/config.yml
 
 Example:
-```
+```yml
 twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
@@ -115,10 +115,10 @@ class MainMenu extends Menu
 ### If you want to use access-control, simply add your routes to app/security.yml
 
 Example:
-```
-    access_control:
-        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/admin, roles: ROLE_ADMIN }
-        - { path: ^/, roles: ROLE_USER }
+```yml
+access_control:
+    - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+    - { path: ^/admin, roles: ROLE_ADMIN }
+    - { path: ^/, roles: ROLE_USER }
 ```
 
