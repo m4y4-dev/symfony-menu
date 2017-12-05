@@ -5,15 +5,15 @@ Simple way to use access-restricted menu in a symfony application
 Use with composer:
 
 Add to composer.json
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/m4y4-dev/symfony-menu.git"
-        }
-    ]
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "https://github.com/m4y4-dev/symfony-menu.git"
+		}
+	]
 
 Run:
-    composer require m4y4-dev/symfony-menu:^1.0
+	composer require m4y4-dev/symfony-menu:^1.0
 
 
 
