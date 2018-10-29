@@ -115,11 +115,13 @@ class MenuItem
 			Request::create($this->path, 'GET')
 		);
 
-		foreach ($accessPattern[0] as $role) {
-			if (false === $this->authorizationChecker->isGranted($role)) {
-	            throw new AccessDeniedException(__CLASS__.':'.__METHOD__, null);
-	        }
-		}
+        if (is_array($accessPattern[0])) {
+    		foreach ($accessPattern[0] as $role) {
+    			if (false === $this->authorizationChecker->isGranted($role)) {
+    	            throw new AccessDeniedException(__CLASS__.':'.__METHOD__, null);
+    	        }
+    		}
+        }
 	}
 
 	/**
