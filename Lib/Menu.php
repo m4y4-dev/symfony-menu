@@ -11,9 +11,9 @@
 
 namespace Symfony\Menu;
 
-use Symfony\Component\Security\Http\AccessMap;
+use Symfony\Component\Security\Http\AccessMapInterface;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Bundle\FrameworkBundle\Routing\Router;
+use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 
@@ -57,11 +57,11 @@ class Menu extends \ArrayObject
      * Converts items into MenuItems
 	 * 
 	 * @param Request                       $request
-	 * @param AccessMap                     $accessMap
-	 * @param Router                        $router
+	 * @param AccessMapInterface            $accessMap
+	 * @param RouterInterface               $router
 	 * @param AuthorizationCheckerInterface $authorizationChecker
 	 */
-	public function __construct(Request $request, AccessMap $accessMap, Router $router, AuthorizationCheckerInterface $authorizationChecker)
+	public function __construct(Request $request, AccessMapInterface $accessMap, RouterInterface $router, AuthorizationCheckerInterface $authorizationChecker)
 	{
 		foreach ($this->items as $key => $value) {
 			try {
